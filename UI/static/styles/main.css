@@ -1,0 +1,89 @@
+/* position and dimension the body so child elements can be dimensioned */
+body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    /*as to display logo and motto adjacently as cells*/
+    display: table;
+    background: rebeccapurple;
+    width: 100%;
+}
+
+#logo{
+    display: table-cell;
+    text-align: center;
+    width: 8%;
+}
+
+#motto{
+    display: table-cell;
+    padding: 1%;
+    text-align: right;
+}
+
+#motto p{
+    font-size: 200%;
+    color: red;
+    margin: 0% 2%;
+}
+
+#motto span{
+    font-size: 100%;
+    color: white;
+    margin: 0% 2%;
+}
+
+/* position and size the navigation bar */
+nav{
+    padding: 1%;
+    background: plum;
+    text-align: end;
+}
+
+/* hightlight navigation tabs on hover */
+nav tab:hover{
+    background: rgb(243, 223, 243);
+}
+
+/* size nav tabs to get desired backgroun size/shape*/
+nav tab{
+    padding: .6% .6% 1.1% .6%;
+}
+
+/* remove underlining of nav links */
+nav tab a{
+    text-decoration: none;
+}
+
+/* choose display to enable side by side rendering of children divs
+(menu and main) */
+#content{
+    display: flex;
+    margin: 0%;
+}
+
+#menu{
+    width: 18%;
+    background-image: linear-gradient(rgb(246, 215, 246), white);
+}
+
+#menu a{
+    margin-top: 4%;
+    padding: .5% 2%;
+    display: block;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* highlight menu item on hover */
+#menu a:hover{
+    background: violet;
+}
+
+#main{
+    width: 82%;
+}
