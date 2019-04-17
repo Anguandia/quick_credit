@@ -1,8 +1,13 @@
 document.write(
 `<div id='menu'>\
+  <div id='options' class='index'>\
+  <div id='more' class='index more'></div>\
+  <div class='index more'></div>\
+  <div class='index more'></div>\
+  </div>\
   <a href='info.html' class='menu index user' id='info'>Loan info</a>\
   <a href='schemes.html' class='menu index user' id='shemes'>Loan schemes</a>\
-  <a href='apply.html' class='menu index user' id='apply'>Apply for a loan</a>\
+  <a href='apply.html' class='menu index user' id='apply'>Apply for loan</a>\
   <a href='loans.html' class='menu admin' id='loans'>Loan Applications</a>\
   <a href='current.html' class='menu admin' id='current'>Current loans</a>\
   <a href='repaid.html' class='menu admin' id='repaid'>Repaid loans</a>\
