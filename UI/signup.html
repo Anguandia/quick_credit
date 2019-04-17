@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quick Credit</title>
+    <link href="static/styles/main.css", rel="stylesheet", type="text/css">
+    <link href="static/styles/media.css", rel="stylesheet", type="text/css">
+  </head>
+  <body id='signup_page' onload="showPage(['signup', 'index'], ['signupform', 'menu', 'auth'])">
+    <div id='container'>
+    <!--the header and navigation bar dynamically written from source indicated-->
+      <script src='static/scripts/general.js'></script>
+      <!--source of page menu ment fraginclude-->
+        <script src="static/scripts/menu.js"></script>
+        <div id='main'>
+        <!--include singup form-->
+          <script src="static/scripts/auth.js"></script>
+        </div>
+        <!--insert menu icon-->
+        <script src="static/scripts/icon.js"></script>
+      </div>
+    </div>
+    <footer><span><em>Quick Credit@2019</em></span></footer>
+    <!--javascript for manipulating page behaviour-->
+    <script src="static/scripts/main.js"></script>
+  </body>
+</html>
