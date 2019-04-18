@@ -72,3 +72,25 @@ function showMenu(){
 menu.onmouseover = openMenu;
 menu.onmouseout = closeMenu;
 icon.onclick = showMenu;
+
+/*combine signup and sign in to avoid codeduplication
+use javascript to redirect andload appropriate form*/
+function redir(){
+    //push current url to local storage
+    localStorage.setItem('ref', 'signin.html');
+    //redirect to signup page
+    window.location.href = 'signup.html';
+}
+
+ /*check if page has been referred to from signin page or not an accordingly invoke pageload call with appropriate arguments*/
+ function checkAuth(){
+     //check if redirect from signin page
+     if(localStorage.getItem('ref')=='signin.html'){
+         //show signin form and clear storge for next load
+         showPage(['signin', 'index'], ['signupform', 'menu', 'auth']);
+         localStorage.removeItem('ref');
+        } else {
+        //load signup page
+         showPage(['signup', 'index'], ['signupform', 'menu', 'auth']);
+     }
+ }
