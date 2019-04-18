@@ -64,19 +64,20 @@ nav tab a{
 /* choose display to enable side by side rendering of children divs
 (menu and main) */
 #content{
-    display: flex;
+    /* display: table; */
     margin: 0%;
 }
 
 #menu{
-    width: 18%;
+    width: 20%;
     background-image: linear-gradient(rgb(246, 215, 246), white);
+    float: left;
 }
 
 #menu a{
     margin-top: 4%;
     padding: .5% 2%;
-    display: block;
+    /* display: block; */
     text-decoration: none;
     font-style: italic;
 }
@@ -95,11 +96,9 @@ nav tab a{
 }
 
 #main{
-    width: 82%;
-    background: black;
-    opacity: .2;
-    /* to force add welcome in */
-    margin-bottom: -40%;
+    width: 80%;
+    float: right;
+    margin: 0%;
 }
 
 /* style the menu icon for small screens */
@@ -143,7 +142,7 @@ nav tab a{
 }
 
 #more{
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 #options{
@@ -152,13 +151,13 @@ nav tab a{
 
 footer{
     padding: 1.5% 0;
-    position: absolute;
+    position: fixed;
     bottom: 0%;
     width: 100%;
     background-image: linear-gradient(rebeccapurple, rgb(80, 0, 80));
     color: white;
     /* ensure footer is not overflown by any previous content */
-    z-index: 1;
+    z-index: 20;
 }
 
 footer span{
@@ -177,4 +176,77 @@ footer span{
     /* bring text to thefore */
     z-index: 1;
     font-family: cursive;
+}
+
+/* style signup/signin page */
+#signupform{
+    position: relative;
+    width: 60%;
+    left: 20%;
+    margin-top: 8%;
+    /* margin: 5% 20%; */
+    /* background: rgb(135, 140, 155); */
+    padding: 1% 0;
+    /* opacity: .8; */
+    z-index: 10;
+}
+
+#signupform input{
+    width: 92%;
+    margin: .5% 4%;
+    display: block;
+    text-indent: 2%;
+    line-height: 1.5;
+    /* padding: .5% 0; */
+    border-radius: 10px;
+    border: solid .5px transparent;
+}
+
+#signupform label{
+    margin-left: 4%;
+    /* padding-top: 1%; */
+    text-transform: capitalize;
+    color: yellow;
+    font-weight: bolder;
+    z-index: 10;
+    font-family: cursive;
+}
+
+#signupform button{
+    border-radius: 15px;
+    border: none;
+    padding: .5% 0;
+    background: rgb(0, 0, 126);
+    color: white;
+    /* align buttons horizontally */
+    width: 25%;
+    margin: .2% 4%;
+}
+
+#signupform span{
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+#signupform::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    background:rebeccapurple;
+    opacity: .3;
+    content: '';
+    z-index: -1;
+    border-radius: 20px;
+}
+
+/* hide default blue outline on focus for entire document*/
+:focus{
+    outline: none;
+}
+
+/* hide all dynamically loaded, page-specific elements by default to avoid flash on initial loading then selective dynamic hidding(since body load event is used to select theseelementsand will only finally be hidden/displayed after the page loads) */
+#auth > *, #menu > *, #signupform > *{
+    display: none;
 }
