@@ -1,19 +1,34 @@
 //show elements relevant to particular page from general html
-function showPage(group, parents){
+//take in an array of parent elements(parents) some of whose
+//children are to be displayed for specific pages if any of their classes is/are in the array of required classes
+function showPage(required, parents){
+    //add class universal to any required class's array
+    required.push('universal');
     for(var parent of parents){
         var elements = document.getElementById(parent).children;
         for(var element of elements){
+            //get an array of classnames of each child element
             var classes = element.getAttribute('class');
-            if(classes.split(' ').includes(group)){
-            } else {
-                element.style.display = 'none';
+            //check if atleast a class name of current element is aamong the classes required for display
+            if(classes.split(' ').filter(value=>required.includes(value)).length>0){
+                //keep menu expansion icon hidden on largescreens
+                if(element.getAttribute('id')!='options'){
+                    //display elements in each block as desired
+                    if(parent=='auth'){
+                        element.style.display = 'inline';
+                    } else if(parent=='menu'){
+                        element.style.display = 'block';
+                    } else {
+                        element.style.display = 'initial';
+                    }
+                }
             }
         }
     }
 }
 
 var index_page = document.getElementsByClassName('index_page');
-index_page.onload = showPage('index', ['menu', 'auth']);
+// index_page.onload = showPage('index', ['menu', 'auth']);
 
 /*slide in and out menu pane to expand, overlapping main content
 on smaller screens*/

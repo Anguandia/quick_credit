@@ -6,7 +6,7 @@
     <link href="static/styles/main.css", rel="stylesheet", type="text/css">
     <link href="static/styles/media.css", rel="stylesheet", type="text/css">
   </head>
-  <body id='index_page'>
+  <body id='index_page' onload = "showPage(['index'], ['auth', 'menu'])">
     <div id='container'>
     <!--the header and navigation bar dynamically written from source indicated-->
       <script src='static/scripts/general.js'></script>
@@ -14,7 +14,7 @@
       <!--source of page menu ment fraginclude-->
         <script src="static/scripts/menu.js"></script>
         <h1 id='ad'>Welcome to Quick Credit, Signup to borrow or explore the menu</h1>
-        <div id='main'>
+        <div id='main' style='background:black; opacity:.2; margin-bottom:-40%'>
         </div>
         <!--insert menu icon-->
         <script src="static/scripts/icon.js"></script>
